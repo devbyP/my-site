@@ -1,6 +1,63 @@
 extends ../templates/main.pug
 
 append content 
-    include ../includes/nav.pug
+  include ../includes/nav.pug
 
-    h1 home page
+  .name
+    h1 Thanapon Teerakaisri
+    ul
+      li.email email : dev.thanapon@gmail.com
+      li.github
+        | github : 
+        a(href="https://www.github.com/devbyP" target="_blank" class="hi-link") devbyP
+  h2 About Me
+  p 
+    | My name is Thanapon Teerakaisri. I do 
+    span.highlight-primary programming
+    |  and 
+    span.highlight-secondary pixel art
+    |.
+
+
+  h2 My skill
+  h3 Programming language
+  ul
+    li Go(Golang)
+    li Javascript
+    li Typescript
+    li C# (I sometime do some gamedev with unity.)
+
+  p
+  | I like doing back-end web development. 
+  | However, I can do a little of front-end as well.
+
+  h3 Database
+  p These are two are databases I use in my projects.
+  ul
+    li Postgresql
+    li Hu(Mongo)se or Mongodb
+  p
+  | Not a database expert but, can do some basic crud operation and 
+  | basic Postgresql server admin.
+
+
+
+block style
+  style.
+    .highlight-primary {
+      background-color: var(--primary-saturate);
+      color: var(--white-text);
+    }
+    .highlight-secondary {
+      background-color: var(--secondary-saturate);
+      color: var(--black-text);
+    }
+    .hi-link, .hi-link:visited {
+      color: var(--primary-saturate);
+    }
+    .hi-link:hover {
+      color: var(--secondary);
+    }
+    .hi-link:active {
+      color: var(--error);
+    }

@@ -1,5 +1,21 @@
 extends ../templates/main.pug
 
 append content 
-    include ../includes/nav.pug
-    h1 Gallery page
+  include ../includes/nav.pug
+  h1 Gallery page
+  if projects && projects.length > 0
+    p The show case of my work.
+    each p in projects
+      a(href=p.previewLink)
+        article.project-card
+          h2= p.name
+          p= p.detail
+  else
+    p Sorry no project avalible.
+    if errorMess == true
+      span= `error occur: ${errorMess}`
+
+  style.
+    article {
+      background-color: white;
+    }
